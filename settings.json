@@ -1,0 +1,428 @@
+{
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "**/Thumbs.db": true,
+        "**/*.docx" : true,
+        "**/*.tmp" : true,
+    },
+    "editor.tabCompletion": "on",
+    "update.mode": "none",
+    "editor.suggest.snippetsPreventQuickSuggestions": false,
+    "vscode-edge-devtools.mirrorEdits": true,
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "bracketPairColorizer.depreciation-notice": false,
+    "editor.find.autoFindInSelection": "multiline",
+    "vscode-edge-devtools.webhint": false,
+    "files.associations": {
+        "*.cjson": "jsonc",
+        "*.wxss": "css",
+        "*.wxs": "javascript",
+        "*.vue": "html"
+    },
+    "emmet.triggerExpansionOnTab": true,
+    "emmet.includeLanguages": {
+        "wxml": "html",
+        "vue": "html",
+        "vue-html": "html"
+    },
+    "minapp-vscode.disableAutoConfig": true,
+/*下面是matlab*/
+    "matlab.mlintpath" : "D:\\Matlab\\bin\\win64\\mlint.exe",  //检查代码格式是否有问题
+
+/*下面是latex*/
+    "[latex]": {
+        "editor.defaultFormatter": "James-Yu.latex-workshop"
+    },
+
+    // 编译方案，这里定义了三个方案
+    "latex-workshop.latex.recipes": 
+    [
+        // 第一个方案，只使用 pdflatex
+        {"name": "xelatex",
+        "tools": [
+        "xelatex"
+        ]
+        },
+
+        // 第二个方案，用于带参考文献的论文的编译
+        {"name": "xelatex ➞ bibtex ➞ xelatex`×2",     //bibtex是参考文献管理工具
+        "tools": [
+            "xelatex",
+            "bibtex",
+            "xelatex",
+            "xelatex"
+        ]
+        },
+
+        //第三个方案（坑死我的没有设置latexmk)
+        {
+            "name": "latexmk 🔃",
+            "tools": [
+              "latexmk"
+            ]
+          },
+    ],
+
+   // 编译方案中所需的编译工具，包含 xelatex 和 bibtex
+   "latex-workshop.latex.tools": [
+
+    {
+        "name": "latexmk",
+        "command": "latexmk",
+        // "args": [
+        //     "-synctex=1",
+        //     "-interaction=nonstopmode",
+        //     "-file-line-error",
+        //     "-pdf",
+        //     "-outdir=%OUTDIR%",
+        //     "%DOC%"
+        // ],
+        "args": [
+            "-xelatex",
+            "-synctex=1",
+            "-interaction=nonstopmode",
+            "-file-line-error",
+            "%DOC%"
+        ],
+        "env": {}
+      },
+
+      {
+        "name": "xelatex",
+        "command": "xelatex",
+        "args": [
+            "-synctex=1",
+            "-interaction=nonstopmode",
+            "-file-line-error",
+            "%DOC%"
+        ]
+    },
+   
+    {
+        "name": "bibtex",
+        "command": "bibtex",
+        "args": [
+            "%DOCFILE%"
+        ]
+    }
+],
+    // 将自己编写的宏包路径添加到宏包搜索路径中（好吧，latex-workshop没有这个参数，实际上只需要将宏包安装到TexLive中即可）
+    "latex-workshop.latex.search.path":[
+        "C:\\Users\\10456\\Desktop\\note\\repo\\Latex\\宏包",
+        "C:\\Users\\10456\\Desktop\\note\\repo\\Latex\\文档类"
+    ],
+    // 编译错误时不显示警告弹窗
+    "latex-workshop.message.error.show"  : false,
+    "latex-workshop.message.warning.show": false,
+    // 打开pdf阅读器
+    "latex-workshop.view.pdf.viewer": "tab",
+    // 两次自动编译最小间隔时间为 10 秒，免得每次保存都要重新编译
+    "latex-workshop.latex.autoBuild.interval": 10000,
+    // 默认使用上一次的编译方案
+    "latex-workshop.latex.recipe.default": "lastUsed",
+    // 每次编译后删除辅助文件
+    "latex-workshop.latex.autoClean.run": "onBuilt",
+    "latex-workshop.view.pdf.hand": true,
+    "editor.wordWrap": "on",
+    // 双击鼠标即可跳转到tex文件中相应位置
+    "latex-workshop.view.pdf.internal.synctex.keybinding": "double-click",
+    //SpellRight插件设置
+    "spellright.language": [
+        "en",
+        "zh-cn"
+    ],
+    //是否检查拼写规范
+    "spellright.documentTypes": [
+        "plaintext",
+        "latex"
+    ],
+
+/*下面是git*/
+    "terminal.integrated.defaultProfile.windows": "Command Prompt",
+    "bracket-pair-colorizer-2.depreciation-notice": true,
+    "git.autoStash": true,
+    "search.followSymlinks": false,
+    "git.alwaysShowStagedChangesResourceGroup": true,
+    "vscode-edge-devtools.fallbackRevision": "@f7af80761c68124fe8e0fff52a5918d20448c1a4",
+    "debug.javascript.defaultRuntimeExecutable": {
+    
+        "pwa-node": "node"
+    },
+
+    
+/*下面是code runner*/
+    "code-runner.clearPreviousOutput": true,
+    "code-runner.executorMapByGlob": {
+        "pom.xml": "cd $dir && mvn clean package"
+    },
+    "code-runner.executorMap": {
+        "java": "cd $dir && javac -encoding utf-8 $fileName && java $fileNameWithoutExt"
+    },
+    "files.autoSave": "afterDelay",
+
+
+/*下面是宏命令*/
+    "macros.list": {
+        /*两端添加颜色标签*/ //暂时废弃了，因为要保存原先的，太难了
+        "font-orange": [
+            //"cursorFocusLeft",
+            {"command": "cursorMove","args": {"to": "left","by": "selection","value": 1,"select": false},"when": "editorTextFocus && editorHasSelection"},
+            //打字左括号
+            {
+                "command": "type",
+                "args": {"text": "<font color='orange'>"},
+            },
+            //cursorFocusRight
+            {"command": "cursorMove","args": {"to": "right","by": "selection","value": 1,"select": false},"when": "editorTextFocus && editorHasSelection"},
+            {
+                "command": "type",
+                "args": {"text": "</font>"}
+
+            }
+        ],
+        "font-red": [
+            //"cursorEnd",
+            {"command": "type","args": {"text": "<font color='red'></font>" }},
+            "cursorWordLeft","cursorLeft","cursorLeft"
+        ],
+        "font-green": [
+            //"cursorEnd",
+            {"command": "type","args": {"text": "<font color='chartreuse'></font>" }},
+            "cursorWordLeft","cursorLeft","cursorLeft"
+        ],
+        "font-aqua": [
+            //"cursorEnd",
+            {"command": "type","args": {"text": "<font color='aqua'></font>" }},
+            "cursorWordLeft","cursorLeft","cursorLeft"
+        ],
+        //两端添加引号
+        "quotation-mark":[
+            "cursorWordLeft",{"command": "type", "args": {"text": "'"}},
+            "cursorWordRight",{"command": "type", "args": {"text": "'"}},
+        ],
+        // 快捷键 ctrl+k, j
+        "union-type":[
+            {"command": "type","args": {"text": "\\mathop{\\bigcup}\\limits^\\infty_{i=1}"}}
+        ],
+        // 快捷键 ctrl+k, s
+        "sum-type":[
+            {"command": "type","args": {"text": "\\sum\\limits^\\infty_{i=1}"}}
+        ],
+        // 快捷键 ctrl+k, h
+        "set-type":[
+            {"command": "type","args": {"text": "E\\{x\\mid f(x)>a\\}"}}
+        ],
+        // 快捷键 ctrl+k, t
+        "topo-type":[
+            {"command": "type","args": {"text": "\\prod\\limits_{\\alpha\\in J}}"}}
+        ],
+        // 快捷键 ctrl+k, l
+        "upper-limit":[
+            {"command": "type", "args": {"text":"\\lim\\limits_{n\\to\\infty}"}},
+        ],
+        // 快捷键 ctrl+k, k
+        "inner-product":[
+            {"command": "type", "args": {"text":"\\lang  \\rang"}},
+            "cursorWordLeft","cursorLeft","cursorLeft"
+        ],
+        // 快捷键 ctrl+k, v
+        "square-bracket":[
+            {"command": "type", "args": {"text":"\\Big[  \\Big]"}},
+            "cursorLeft","cursorWordLeft","cursorLeft","cursorLeft"
+        ],
+        // 快捷键 ctrl+l, b
+        "adapt-bracket":[
+            {"command": "type", "args": {"text":"\\Big(  \\Big)"}},
+            "cursorLeft","cursorWordLeft","cursorLeft","cursorLeft"
+        ],
+        //快捷键 ctrl+k, f
+        "large-fraction":[
+            {"command": "type", "args": {"text":"\\cfrac{\\partial }{\\partial }"}},
+            "cursorLeft","cursorWordLeft","cursorLeft","cursorLeft","cursorLeft"
+        ],
+        // 快捷键 ctrl+k, n
+        "large-norm":[
+            {"command": "type", "args": {"text":"\\biggm|  \\biggm|"}},
+            "cursorLeft","cursorWordLeft","cursorLeft","cursorLeft"
+        ],
+        // 快捷键 ctrl+k, q
+        "group-product":[
+            {"command": "type", "args": {"text":"\\prod\\limits_{i\\in I}\\\\^w G_i"}},
+        ],
+        // 快捷键 ctrl+l, v
+        "circ-bracket":[
+            {"command": "type", "args": {"text":"\\big(  \\big)"}},
+            "cursorLeft","cursorWordLeft","cursorLeft","cursorLeft"
+        ],
+        // 一键将行内改为块状注释（只有在js和java代码块中才有效）
+        "block-comment":[
+            {"command": "cursorMove" ,"args": {"to": "wrappedLineStart"}},
+            {"command": "type", "args": {"text":"/**\n"}},
+            {"command": "cursorMove" ,"args": {"to": "down", }},
+            {"command": "cursorMove" ,"args": {"to": "wrappedLineStart"}},
+            {"command": "type", "args": {"text":"*/\n"}},
+            {"command": "cursorMove" ,"args": {"to": "up"}},
+            {"command": "cursorMove" ,"args": {"to": "up"}},
+            {"command": "cursorMove" ,"args": {"to": "wrappedLineEnd"}}
+        ],
+    },
+    "editor.unicodeHighlight.allowedCharacters": {
+        "　": true,
+        "！": true
+    },
+    "editor.unicodeHighlight.allowedLocales": {
+        "zh-hans": true,
+        "zh-hant": true
+    },
+    "window.commandCenter": false,
+    "editor.guides.bracketPairs": false,
+    "workbench.colorCustomizations": {
+        "editorBracketHighlight.foreground1": "#ffd700",
+        "editorBracketHighlight.foreground2": "#da70d6",
+        "editorBracketHighlight.foreground3": "#179fff",
+        "editorBracketHighlight.foreground4": "#24d600",
+        "editorBracketHighlight.foreground5": "#00d8d8",
+        "editorBracketHighlight.foreground6": "#90b55b",
+    },
+    // markdown all in one的内容补全
+    "[markdown]": {
+        "editor.defaultFormatter": "yzhang.markdown-all-in-one",
+        "editor.quickSuggestions": {
+            "comments": "off",   // 是否在注释中开启补全功能
+            "strings": "off",    // 是否在反引号字符串中开启补全功能
+            "other": "off"       // 其它所有补全功能
+        },
+        // "editor.tabCompletion": "on",
+        // "editor.renderWhitespace": "all"
+    },
+    "[python]": {
+        "editor.formatOnType": true
+    },
+    "git.enableSmartCommit": true,
+    "wxmlConfig.activeColor": {
+
+        "color": "#e5c07b"
+    },
+    "git.allowForcePush": true,
+    "git.closeDiffOnOperation": true,
+    "editor.multiCursorModifier": "ctrlCmd",
+    "markdown-mermaid.languages": [
+        "mermaid"
+    ],
+    "markdown-preview-enhanced.mermaidTheme": "forest",
+    "markdown-mermaid.darkModeTheme": "default",
+    "cSpell.enabledLanguageIds": [
+        "asciidoc",
+        "c",
+        "cpp",
+        "csharp",
+        "css",
+        "elixir",
+        "erlang",
+        "git-commit",
+        "go",
+        "graphql",
+        "handlebars",
+        "haskell",
+        "html",
+        "jade",
+        "java",
+        "javascript",
+        "javascriptreact",
+        "json",
+        "jsonc",
+        "jupyter",
+        "less",
+        "php",
+        "plaintext",
+        "python",
+        "pug",
+        "restructuredtext",
+        "rust",
+        "scala",
+        "scss",
+        "scminput",
+        "swift",
+        "typescript",
+        "typescriptreact",
+        "vue",
+        "yaml",
+        "yml"
+    ],
+    "editor.accessibilitySupport": "off",
+    "redhat.telemetry.enabled": true,
+
+    /*下面是markdown的内容*/
+    // markdown-preview-enhanced插件
+    "markdown-preview-enhanced.enableEmojiSyntax": false,
+    "markdown-preview-enhanced.liveUpdate": false,
+    "markdown-preview-enhanced.alwaysShowBacklinksInPreview": false,
+    "markdown-preview-enhanced.enableScriptExecution": true,
+    "markdown-preview-enhanced.latexEngine": "xelatex",
+    // Pandoc设置
+    "markdown-preview-enhanced.pandocPath": "C:\\Users\\10456\\AppData\\Local\\Pandoc\\pandoc.exe",
+    "markdown-preview-enhanced.pandocArguments": [
+        "--pdf-engine=xelatex", "--to=pdf" , "--output=${workspaceFolder}/${fileBasenameNoExtension}.pdf",
+        // "--standalone"
+    ],
+    
+    // markdown-all-in-one插件
+    "markdown.styles": [
+        "C:\\Users\\10456\\Desktop\\笔记\\远程仓库\\github-markdown-light.css"
+    ],
+    "markdown.extension.extraLangIds": [
+        "quarto"
+    ],
+    // 我是sb，昨天折腾了大半天，在知乎上和跑到人家markdown+math插件的平台下留言，都没想到去github上MPE区域的说明书里去找
+    // 但是MPE的设置也是真的奇葩， 就不能在用户设置文件里设置宏吗？非得自己在user文件夹下搞一个config.js……离大谱
+    "markdown.extension.katex.macros": {
+        "\\pfrac":"\\frac{\\partial #1}{\\partial #2}",
+        "\\dpfrac":"\\dfrac{\\partial #1}{\\partial #2}",
+        "\\tvek": "\\begin{pmatrix}#1\\\\#2\\end{pmatrix}",
+        "\\bb": "\\bold{#1}",
+        "\\bs": "\\boldsymbol{#1}",
+        "\\vector": "\\overrightarrow{#1}",
+        "\\arc" : "\\mathop{\\scriptsize #1}\\limits^{\\frown}",
+    },
+    // 已被禁用的markdown+math插件
+    "mdmath.macros": {
+        "\\RR":"\\mathbb{R}",
+        "\\pfrac":"\\frac{\\partial #1}{\\partial #2}",  
+        "\\vek": "\\begin{pmatrix}#1\\\\#2\\end{pmatrix}",
+    },
+    "git.enabled": false,
+    
+    
+    /*live server*/
+
+    "liveServer.settings.port": 8080, //设置本地服务的端口号
+    "liveServer.settings.root": "/", //设置根目录，也就是打开的文件会在该目录下找
+    "liveServer.settings.CustomBrowser": "microsoft-edge", //设置默认打开的浏览器
+    "liveServer.settings.AdvanceCustomBrowserCmdLine": "chrome --incognito --remote-debugging-port=9222",
+    "liveServer.settings.NoBrowser": false,
+    "liveServer.settings.ignoredFiles": [//设置忽略的文件
+        ".vscode/**",
+        "**/*.scss",
+        "**/*.sass"
+    ],
+    "cmake.showOptionsMovedNotification": false,
+    "editor.unicodeHighlight.nonBasicASCII": false,
+    "markdown-preview-enhanced.enableHTML5Embed": true,
+    "markdown-preview-enhanced.chromePath": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+    "markdown-preview-enhanced.enablePreviewZenMode": true,
+    "settingsSync.ignoredSettings": [
+        "-markdown-preview-enhanced.chromePath",
+        "-markdown-preview-enhanced.pandocPath"
+    ],
+    "markdown-preview-enhanced.frontMatterRenderingOption": "code block",
+    "view-in-browser.customBrowser": "chrome",
+    "markdown-preview-enhanced.enableTypographer": true,
+    "security.workspace.trust.untrustedFiles": "open",
+ 
+}
+

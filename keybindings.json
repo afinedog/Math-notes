@@ -1,0 +1,105 @@
+// 将键绑定放在此文件中以覆盖默认值auto[]
+[
+    {
+        "key": "ctrl+l u",
+        "command": "miniprogramAssistant.toUnderline"
+    },
+    {
+        "key": "ctrl+alt",
+        "command": "workbench.action.openRecent"
+    },
+    {
+        "key": "ctrl+r",
+        "command": "-workbench.action.openRecent"
+    },
+//下面是我自定义的宏命令
+    {
+        "key": "ctrl+k o",
+        "command": "macros.font-orange",
+        "when": "editorTextFocus && !editorReadonly && editorLangId =~ /^markdown$|^rmd$|^qmd$/"
+    },
+    {
+        "key": "ctrl+k r",
+        "command": "macros.font-red",
+        "when": "editorTextFocus && !editorReadonly && editorLangId =~ /^markdown$|^rmd$|^qmd$/"
+    },    {
+        "key": "ctrl+k g",
+        "command": "macros.font-green",
+        "when": "editorTextFocus && !editorReadonly && editorLangId =~ /^markdown$|^rmd$|^qmd$/"
+    },
+    {
+        "key": "ctrl+k a",
+        "command": "macros.font-aqua",
+        "when": "editorTextFocus && !editorReadonly && editorLangId =~ /^markdown$|^rmd$|^qmd$/"
+    },
+    {
+        "key": "ctrl+k j",
+        "command": "macros.union-type",
+        "when": "editorTextFocus && !editorReadonly && editorLangId =~ /^markdown$|^rmd$|^qmd$/"
+    },
+    {
+        "key": "ctrl+k s",
+        "command": "macros.sum-type",
+        "when": "editorTextFocus && !editorReadonly && editorLangId =~ /^markdown$|^rmd$|^qmd$/"
+    },
+    {
+        "key": "ctrl+k h",
+        "command": "macros.set-type",
+        "when": "editorTextFocus && !editorReadonly && editorLangId =~ /^markdown$|^rmd$|^qmd$/"
+    },
+    {
+        "key": "ctrl+k k",
+        "command": "macros.inner-product",
+        "when": "editorTextFocus && !editorReadonly && editorLangId =~ /^markdown$|^rmd$|^qmd$/"
+    },
+    {
+        "key": "ctrl+k v",
+        "command": "macros.square-bracket",
+        "when": "editorTextFocus && !editorReadonly && editorLangId =~ /^markdown$|^rmd$|^qmd$/"
+    },
+    {
+        "key": "ctrl+k b",
+        "command": "macros.adapt-bracket",
+        "when": "editorTextFocus && !editorReadonly && editorLangId =~ /^markdown$|^rmd$|^qmd$/"
+    },
+    {
+        "key": "ctrl+k t",
+        "command": "macros.topo-type",
+        "when": "editorTextFocus && !editorReadonly && editorLangId =~ /^markdown$|^rmd$|^qmd$/"
+    },
+    {
+        "key": "ctrl+k l",
+        "command": "macros.upper-limit",
+        "when": "editorTextFocus && !editorReadonly && editorLangId =~ /^markdown$|^rmd$|^qmd$/"
+    },
+    {
+        "key": "ctrl+k f",
+        "command": "macros.large-fraction",
+        "when": "editorTextFocus && !editorReadonly && editorLangId =~ /^markdown$|^rmd$|^qmd$/"
+    },
+    {
+        "key": "ctrl+k q",
+        "command": "macros.group-product",
+        "when": "editorTextFocus && !editorReadonly && editorLangId =~ /^markdown$|^rmd$|^qmd$/"
+    },
+    {
+        "key": "ctrl+k n",
+        "command": "macros.large-norm",
+        "when": "editorTextFocus && !editorReadonly && editorLangId =~ /^markdown$|^rmd$|^qmd$/"
+    },
+    {
+        "key": "ctrl+k /",
+        "command": "macros.block-comment",
+        "when": "editorTextFocus && !editorReadonly && editorLangId =~ /^markdown$|^rmd$|^qmd$/"
+    },
+    {
+        "key": "shift+clear",
+        "command": "workbench.action.quickOpenPreviousRecentlyUsedEditorInGroup",
+        "when": "!activeEditorGroupEmpty"
+    },
+    {
+        "key": "ctrl+tab",
+        "command": "-workbench.action.quickOpenPreviousRecentlyUsedEditorInGroup",
+        "when": "!activeEditorGroupEmpty"
+    },
+]
