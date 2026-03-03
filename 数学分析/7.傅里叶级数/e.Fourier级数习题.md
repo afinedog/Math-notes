@@ -4,11 +4,14 @@
 
 ### 不等式
 
-- **Riemann空间内积的C-S不等式**：
+- **推广的Bessel不等式**：
   - 设 $\p_j(x)$ 是 $[a,b]$ 上的正交函数列，$f(x)$ 在 $[a,b]$ 可积，$a_n = \dis\int^b_a f(x)\p_n(x)dx$
-  - 则 $\sum\limits^\infty_{n=1} a_n^2 \leq \dis\int^b_a f^2(x)dx$ 收敛
-  - **证明**：利用定积分的C-S不等式即可
-- **推广的Parseval等式**：
+  - 则 $\sum\limits^n_{k=1} a_k^2 \leq \dis\int^b_a f^2(x)dx$，从而收敛
+  - <font color='chartreuse'>本质是将Bessel不等式中的 $\cos nx,\sin nx$ 替换成了一般的正交函数列</font>
+  - **证明**：
+    - 易得 $a_n = (f,\p_n)$，即正交投影
+    - 故由勾股定理即得不等式
+- **推广的Parseval恒等式**：
   - 设 $f,g$ 均在 $[-\pi,\pi]$ 可积，三角系数分别为 $a_n,b_n$ 和 $\a_n,\b_n$
   - 则 $$\frac{1}{\pi}\int^\pi_{-\pi} f(x)g(x)dx = \frac{a_0\a_0}{2} + \sum^\infty_{n=1} (a_n\a_n + b_n\b_n) $$
   - **证明（和差化积）**：
@@ -47,7 +50,7 @@
   - 若 $f$ 在 $(0,2\pi)$ 内单减，则 $b_n \geq 0$
   - 若 $f$ 在 $(0,2\pi)$ 内单增，则 $b_n \leq 0$
   - **证明**：
-    - 易得 $\sin nx$ 在 $[\dfrac{2k\pi}{n},\dfrac{(2k+1)\pi}{n}]$ 上非负，在 $[\dfrac{(2k+1)\pi}{n},\dfrac{(2k+2)\pi}{n}]$ 上非负
+    - 易得 $\sin nx$ 在 $\dkh{\dfrac{2k\pi}{n},\dfrac{(2k+1)\pi}{n}}$ 上为正，在 $\dkh{\dfrac{(2k+1)\pi}{n},\dfrac{(2k+2)\pi}{n}}$ 上为负
     - 在 $b_n$ 的E-F公式中，划分积分区间，按照上面的方法换元，即可易得结论
 - **单调性2**：
   - 设 $f(x)$ 在 $[0,2\pi]$ 上连续可微
@@ -63,7 +66,6 @@
   - 若 $f$ 为偶函数，关于 $(\dfrac{l}{2},0)$ 对称，则 $b_n = 0$ 且 $a_{2n} = 0$
   - 若 $f$ 为奇函数，关于 $(\dfrac{l}{2},0)$ 对称，则 $a_n = 0$ 且 $b_{2n-1} = 0$
 - **总结**：由于 $f$ 具有周期性，故随意添加一些周期或对称相关的性质，利用换元法都可以解出新性质
-- **应用**：快速求出一些周期延拓的展开式，如用 $x$ 展开式求出 $|x|$ 展开式
 
 ## 抽象函数的傅立叶级数
 
@@ -82,7 +84,7 @@
 
 - **双周期函数**：设 $f$ 在 $\R$ 上可导，$f(x) = f(x+2k) = f(x+b)\pad (k\in\N^+，b\in\Q^+)$，则 $f$ 是常函数
   - **证明**：
-    - 函数以 $k,b$ 为周期
+    - 函数以 $2k,b$ 为周期
     - 对 $a_n$ 关于 $T=k$ 的E-F公式，换元 $x=t+b$，由诱导公式和周期性可化为 $a_n\cos\dfrac{n\pi b}{k}-b_n\sin\dfrac{n\pi b}{k}$
     - 同理可得 $b_n = a_n\sin\dfrac{n\pi b}{k}+b_n\cos\dfrac{n\pi b}{k}$
     - 两者组成线性方程组，易得 $|A|\neq 0$，故仅零解，即 $f$ 为常函数
@@ -93,7 +95,8 @@
   - 则
     - $c_{2k} = 0$
       - **证明**：
-        - 易得 $c_n = \dfrac{f^{(n)}(0)}{n!}$，而 $f^{(2k)}(x)$ 也是奇函数，从而可得结论
+        - 由泰勒展开的唯一性，$c_n = \dfrac{f^{(n)}(0)}{n!}$
+        - 再由 $f^{(2k)}(x)$ 也是奇函数即得结论
     - $\forall k\in\N，\sum\limits^\infty_{n=1} n^kb_n$ 收敛
       - **证明**：
         - 由于幂级数无穷阶可微，故由傅立叶级数逐项微分定理得 $b_n = o(\dfrac{1}{n^{k+2}})$，从而收敛
@@ -114,6 +117,9 @@
 - $f(x) = \cos(ax)$，其中 $a$ 不是自然数
   - **解**：
     - E-F公式 + 积化和差公式即可
+- $f(x) = \sin^m x\cos^n x$
+  - **解**：
+    - 积化和差即可
 - $f(x) = \cot x$
   - **解（复数展开法）**：
     - 奇函数，故 $a_n = 0$
@@ -135,7 +141,13 @@
 - $f(x) = \sgn(x)$
   - **解**：
     - 奇函数，故 $a_n = 0$
-    - E-F公式求积分易得 $b_n = $
+    - E-F公式求积分易得 $b_n = \begin{cases} 0 & 奇数 \\ \dfrac{4}{n\pi} & 偶数 \end{cases}$
+    - 即展开式为 $$\frac{4}{\pi}\sum^\infty_{n=1} \frac{1}{2n-1} \sin(2n-1)x$$
+- $f(x) = \sgn(\cos x)$
+  - **解**：
+    - 偶函数，故 $b_n = 0$
+    - E-F公式求积分易得 $a_n = \begin{cases} 0 & 奇数 \\ \dfrac{4}{n\pi} & 偶数 \end{cases}$
+    - 即展开式为 $$\frac{4}{\pi}\sum^\infty_{n=1} \frac{(-1)^{n-1}}{2n-1} \cos(2n-1)x$$
 
 
 ### 幂函数
@@ -154,23 +166,46 @@
   - **解（逐项积分法）**
   - **解（定义法 + 递推）**：
     - 当 $k$ 为奇数时，其为奇函数
-      - 设 $I_k(n) = \dis\int^{\pi}_{-\pi} x^k\sin (nx) dx$，分部积分得 $I_k(n) = -\dfrac{k(k-1)}{n^2}I_{k-2}(n)$
-      - 上面已知 $I_1(n)$，故 $$b_n = (-1)^{\dfrac{k-1}{2}}\frac{k!}{n^k}(-1)^{n-1}2$$
+      - 设 $b^{(k)}_n$ 表示傅立叶系数，由E-F公式 + 分部积分易得递推关系 $$b^{(k)}_n = \frac{(-1)^{n+1}2\pi^{k-1}}{n}-\frac{k(k-1)}{n^2}b^{(k-2)}_n$$
+      <!-- - 故得到递推关系 $$b_n = (-1)^{\dfrac{k-1}{2}}\frac{k!}{n^k}(-1)^{n-1}2$$ -->
+      <!-- - 直接计算易得 $a_0 = 0$ -->
     - 当 $k$ 为偶数时，其为偶函数
-      - 设 $I_k(n) = \dis\int^{\pi}_{-\pi} x^k\cos (nx) dx$，分部积分易 $I_k(n) = -\dfrac{k(k-1)}{n^2}I_{k-2}(n)$
-      - 再已知 $I_2(n)$，故 $$a_n = (-1)^{\dfrac{k}{2}}\frac{k!}{n^k}(-1)^{n-1}2$$
-
+      - 设 $a^{(k)}_n$ 表示傅立叶系数，由E-F公式 + 分部积分易得递推关系 $$a^{(k)}_n = \frac{(-1)^{n+1}2\pi^{k-1}}{n}-\frac{k(k-1)}{n^2}a^{(k-2)}_n$$
+      <!-- - 再已知 $I_2(n)$，故 $$a_n = (-1)^{\dfrac{k}{2}}\frac{k!}{n^k}(-1)^{n-1}2$$ -->
+      - 直接计算易得 $\cfrac{a_0}{2} = \cfrac{\pi^k}{k+1}$
 
 ### 绝对值函数
 
 - $f(x) = \arccos(\cos x) = |x|$
-  - **解（定义法）**：
+  - **解**：
     - 偶函数，故 $b_n = 0$
-    - 由E-F公式计算，易得 $a_n = \dfrac{2}{\pi}\dfrac{(-1)^n-1}{n^2} = \begin{cases} -\dfrac{4}{n^2\pi} & n为奇数 \\ 0 & n为偶数 \end{cases}$
+    - 由E-F公式计算，易得 $a_n = \dfrac{2}{\pi}\dfrac{(-1)^n}{n^2}$
+    - 即 $$ f(x) \sim \frac{\pi^2}{2} + \frac{2}{\pi}\sum^\infty_{n=1} \frac{(-1)^n}{n^2}\cos(nx) $$
 - $f(x) = \arccos(\sin x) = |\dfrac{\pi}{2}-x|$
   - **解**：
     - 上面的傅立叶级数换元即可
+    - 即 $$ f(x) \sim \frac{\pi^2}{2} + \frac{2}{\pi}\sum^\infty_{n=1} \frac{(-1)^n}{n^2}\cos(nx) $$
 
+### 反三角转化函数
+
+- $f(x) = \arcsin(\sin x) = \begin{cases} x & x\in [-\dfrac{\pi}{2},\dfrac{\pi}{2}] \\\\ \pi-x & x\in [\dfrac{\pi}{2},\dfrac{3\pi}{2}] \end{cases}$
+  - <font color='red'>反三角函数需要尤其注意这一点</font>
+  - **解（定义法）**：
+    - 奇函数，故 $a_n = 0$
+    - 由E-F公式计算，易得 $a_n = \dfrac{2}{\pi}\dfrac{(-1)^n-1}{n^2} = \begin{cases} -\dfrac{4}{n^2\pi} & n为奇数 \\ 0 & n为偶数 \end{cases}$
+    - 即 $$ f(x) \sim \frac{4}{\pi}\sum^\infty_{n=1} \frac{(-1)^{n+1}}{(2n-1)^2}\sin(2n-1)x $$
+- $f(x) = \arcsin(\cos x) = \begin{cases} \dfrac{\pi}{2} - x & x\in [-\dfrac{\pi}{2},\dfrac{\pi}{2}] \\\\ \dfrac{\pi}{2} + x & x\in [\dfrac{\pi}{2},\dfrac{3\pi}{2}] \end{cases}$
+  - <font color='red'>反三角函数需要尤其注意这一点</font>
+  - **解**：
+    - 代入易得 $$ f(x) \sim \frac{4}{\pi}\sum^\infty_{n=1} \frac{1}{(2n-1)^2}\cos(2n-1)x $$
+- $f(x) = \arctan(\tan x) = \begin{cases} x & x\in [-\dfrac{\pi}{2},\dfrac{\pi}{2}] \\\\ x-\pi & x\in [\dfrac{\pi}{2},\dfrac{3\pi}{2}]  \end{cases}$
+  - **解（定义法）**：
+    - 奇函数，故 $a_n = 0$
+    - 由E-F公式计算，易得 $a_n = \dfrac{2}{\pi}\dfrac{(-1)^n-1}{n^2} = \begin{cases} -\dfrac{4}{n^2\pi} & n为奇数 \\ 0 & n为偶数 \end{cases}$
+    - 即 $$ f(x) \sim \sum^\infty_{n=1} \frac{(-1)^{n+1}}{n}\sin(2n)x $$
+- $f(x) = \arcsin(\cot x) = \begin{cases} \dfrac{\pi}{2} - x & x\in [-\dfrac{\pi}{2},\dfrac{\pi}{2}] \\\\ -\dfrac{\pi}{2} - x & x\in [\dfrac{\pi}{2},\dfrac{3\pi}{2}] \end{cases}$
+  - **解**：
+    - 代入易得 $$ f(x) \sim \sum^\infty_{n=1} \frac{1}{n}\sin(2n)x $$
 
 ### 指数函数
 
@@ -188,19 +223,20 @@
 
 - <font color='red'>可用幂级数的逐项求导法求解（但高次幂时很麻烦），也可用傅立叶级数的Parseval恒等式配凑</font>
 - $\dis\sum^\infty_{n=1}\frac{1}{n^2} = \frac{\pi^2}{6}$
+  - <font color='chartreuse'>这题如果用幂级数做，最后转化为计算 $\dis\int^1_0 \frac{\ln(1-x)}{x}dx$，基本无法求解</font>
   - **解（P恒等式法）**：
     - 已知 $x$ 的傅立叶展开式为 $\dis 2\sum^\infty_{n=1}\frac{(-1)^{n+1}}{n}\sin(nx)$
      <!-- - $$2(\sin\ x-\frac{\sin\ 2x}{2}+\frac{\sin\ 3x}{3}-...+\frac{(-1)^{n+1}\sin\ nx}{n}+...)$$ -->
     - 由Parseal恒等式即得结论
   - **解（代入法）**：
-    - 已知 $x^2$ 的傅里叶展开式为 $\dis \frac{\pi^2}{3}\sum^\infty_{n=1}\frac{(-1)^{n}}{n}\cos(nx)$
+    - 已知 $x^2$ 的傅里叶展开式为 $\dis \frac{\pi^2}{3} + 4\sum^\infty_{n=1}\frac{(-1)^{n}}{n^2}\cos(nx)$
     - 取 $x=\pi$ 即得结论
 - $\dis\sum^\infty_{n=1} \frac{1}{n^4} = \frac{\pi^4}{90}$
-  - **解**：
-    - 已知 $x^2$ 的傅立叶展开式为 $\dis\frac{1}{2} + 4\sum^\infty_{n=1} \frac{(-1)^n}{n^2}\cos(nx)$
+  - **解（P恒等式法）**：
+    - 已知 $x^2$ 的傅立叶展开式为 $\dis\frac{\pi^2}{3} + 4\sum^\infty_{n=1} \frac{(-1)^n}{n^2}\cos(nx)$
     - 再由Parseval恒等式即得结论
 
-### 变域幂函数
+### 常波函数
 
 - $\dis\sum\limits^\infty_{n=1} \frac{(-1)^n}{2n+1} = \frac{\pi}{4}$
   - **解（代入法）**：
@@ -221,3 +257,15 @@
 - $\dis\sum^\infty_{n=1}\frac{(-1)^{n+1}\sin n}{n} = \frac{1}{2}$
   - **解**：
     - 由 $x$ 的傅立叶展开式 + $f(1) = 1$ 即得结论
+
+
+
+## 求积分
+
+
+- $\dis\int^1_0 \frac{\ln (1-t)}{t}dt = -\cfrac{\pi^2}{6}$
+  - **解**：
+    - 被积函数幂级数展开，然后逐项积分得转化为 $-\sum\limits^\infty_{n=1}\cfrac{1}{n^2}$
+- $\dis\int^1_{0} \frac{\ln (1+t)}{t}dt = \cfrac{\pi^2}{12}$
+  - **解**：
+    - 被积函数幂级数展开，然后逐项积分得转化为 $\sum\limits^\infty_{n=1}\cfrac{(-1)^{n+1}}{n^2}$
