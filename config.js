@@ -54,7 +54,7 @@
     // 勒让德符号
     "\\leg" : "\\dkh{\\dfrac{#1}{#2}}",
     // 帽子
-    "\\wt" : "\\widetilde", "\\wh" : "\\widehat",
+    "\\wt" : "\\widetilde", "\\wh" : "\\widehat",  "\\wa" : "\\",
 
     //简写
     "\\a" : "\\alpha",
@@ -68,13 +68,16 @@
     "\\p" : "\\varphi",
     "\\o" : "\\omega" , "\\O" : "\\Omega",
     "\\z" : "\\zeta" ,
-    // 范数、数列简写
-    "\\norm": "\\| #1 \\|", "\\seq" : "\\{ #1 \\}",
+    // 范数、内积简写
+    "\\norm": "\\left\\| #1 \\right\\|","\\bnorm": "\\biggm\\| #1 \\biggm\\|","\\Bnorm": "\\Biggm \\| #1 \\Biggm \\|",
+     "\\ip" : "\\left\\lang #1 \\right\\rang", "\\Bip" : "\\Big\\lang #1  \\Big\\rang",
+     "\\abs" : "\\left | #1 \\right |" ,
     // 泛函分析的空间简写
-    "\\normk" : "\\mathbb{K}^n",  "\\fk" : "\\mathbb{K}",
+    "\\K" : "\\mathbb{K}",
     // 泛函分析的线性算子简写
     "\\funcx" : "\\mathscr{X}","\\funcy" : "\\mathscr{Y}", "\\op" : "\\mathscr{L}", "\\opxy" : "\\mathscr{L}(\\funcx,\\funcy)", "\\opyx" : "\\mathscr{L}(\\funcy^*,\\funcx^*)" , "\\fun" : "\\mathscr{L}(\\funcx,\\fk)", "\\opx" : "\\mathscr{L}(\\funcx)", "\\opy" : "\\mathscr{L}(\\funcy)" ,
-    "\\cxy" : "\\mathfrak{C}(\\funcx,\\funcy)" , "\\cx" : "\\mathfrak{C}(\\funcx)", "\\cyx" : "\\mathfrak{C}(\\funcy^*,\\funcx^*)", 
+    "\\cxy" : "\\mathfrak{C}(\\funcx,\\funcy)" , "\\cx" : "\\mathfrak{C}(\\funcx)", "\\cy" : "\\mathfrak{C}(\\funcy)", "\\cyx" : "\\mathfrak{C}(\\funcy^*,\\funcx^*)", 
+    "\\fxy" : "\\mathscr{F}(\\funcx,\\funcy)","\\fx" : "\\mathscr{F}(\\funcx)",  "\\fy" : "\\mathscr{F}(\\funcx)", "\\fyx" : "\\mathscr{F}(\\funcy,\\funcx)",
     // 空白符号简写
     "\\pad" : "\\ \\ " ,
     "\\whh" : "\\quad\ ", "\\whhh" : "\\qquad\\qquad", "\\whhhh" : "\\qquad\\qquad\\qquad",
@@ -90,9 +93,13 @@
 
     /* 文字符号 */
     // 数分
-    "\\grad" : "\\text{grad}\\ ", "\\diam" : "\\text{diam}\\ ", "\\ker" : "\\text{Ker}\\ ", "\\Ker":"\\text{Ker}\\ ", "\\Im" : "\\text{Im}\\ " ,"\\supp" : "\\text{spt}(#1)", "\\span" : "\\text{span}", "\\diag" : "\\text{diag}",
+    "\\grad" : "\\text{grad}\\ ", "\\diam" : "\\text{diam}\\ ", "\\ker" : "\\text{Ker}\\ ", "\\Ker":"\\text{Ker}\\ ", "\\Img":"\\text{Img}\\ ","\\Re" : "\\text{Re}\\ " , "\\Im" : "\\text{Im}\\ " ,"\\supp" : "\\text{spt}(#1)", "\\span" : "\\text{span}", "\\diag" : "\\text{diag}", "\\tr" : "\\text{tr}",
     // 抽代
-    "\\char" : "\\text{char}\\ ", "\\Aut" : "\\text{Aut}\\ ", "\\aut":"\\text{Aut}", "\\End" : "\\text{End}\\ ", "\\coi" : "\\text{Coim}\\ ", "\\cok" : "\\text{Coker}\\ ", "\\rank" : "\\text{rank}\\ ", "\\Hom" : "\\text{Hom}", "\\Dom" : "\\text{Dom}\\ ", "\\dom" : "\\text{dom}\\ ", "\\Codom" : "\\text{Codom}\\ ", "\\In" : "\\text{In}\\ ", "\\Rad" : "\\text{Rad}\\ ", "\\adj" : "\\text{adj}", "\\Syl" : "\\text{Syl}", "\\Gal" : "\\text{Gal}",
+    "\\gcm":"\\text{gcm}" ,"\\char" : "\\text{char}\\ ", "\\Aut" : "\\text{Aut}\\ ", "\\aut":"\\text{Aut}", "\\End" : "\\text{End}\\ ", "\\coi" : "\\text{Coim}\\ ", "\\cok" : "\\text{Coker}\\ ", "\\rank" : "\\text{rank}\\ ", "\\Hom" : "\\text{Hom}", "\\Dom" : "\\text{Dom}\\ ", "\\dom" : "\\text{dom}\\ ", "\\Codom" : "\\text{Codom}\\ ", "\\In" : "\\text{In}\\ ", "\\Rad" : "\\text{Rad}\\ ", "\\adj" : "\\text{adj}", "\\Syl" : "\\text{Syl}", "\\Gal" : "\\text{Gal}",
+    //复变
+    "\\Arg": "\\text{Arg}\\ ", "\\Ln" : "\\text{Ln}\\ ", "\\Arcsin" : "\\text{Arcsin}\\ ", "\\Arccos" : "\\text{Arccos}\\ ", "\\Arctan" : "\\text{Arctan}\\ ", "\\sech" : "\\text{sech}\\ ", "\\Res" : "\\mathop{\\text{Res}}\\limits",
+    //泛函
+    "\\var" : "\\text{var}", "\\codim" : "\\text{codim}\\ ", "\\ind" : "\\text{ind}\\ ",
     // 偏微分
     "\\lip" : "\\text{Lip}", "\\divt":"\\text{div}\\ ", "\\rot":"\\text{rot}\\ ", "\\te" : "\\text{#1}", "\\dx" : "\\text{dx}" , "\\ds" : "\\text{ds}", "\\dS" : "\\text{dS}", "\\dr" : "\\text{dr}", "\\dist" : "\\text{dist}", "\\loc" : "\\text{loc}", "\\sgn" : "\\text{sgn}",
     // 大于符号
@@ -100,11 +107,14 @@
     // 逻辑量词
     "\\for" : "\\forall" , "\\exi" : "\\exist", 
     // 上标
-    "\\oo" : "\\overset{\\circ}{#1}" , "\\ol" : "\\overline{#1}" , "\\or" : "\\overrightarrow{#1}", "\\ul" : "\\underline{#1}",
-    // 几乎处处收敛
+    "\\oo" : "\\overset{\\circ}{#1}" , "\\ol" : "\\overline{#1}" , "\\or" : "\\overrightarrow{#1}", "\\ul" : "\\underline{#1}", "\\ool" : "\\overline{\\overline{#1}}",
+    // 实变
     "\\ae" : "\\pad \\text{a.e.}\\ ", "\\pw" : "\\pad\\text{p.w.}" , "\\im" : "\\pad\\text{i.m.}","\\uni" : "\\pad\\text{uni.}",
+    "\\spt" : "\\text{spt}", "\\esup" : "\\mathop{\\text{esssup}}" , "\\Le" : "\\text{Le}",
     // 图论
     "\\val" : "\\text{val}\\ ", "\\capa" : "\\text{cap}\\ ",
+    // 数值代数
+    "\\Cond" : "\\text{Cond}",
 
     /* 邪道画图法 */
     // 内射模交换图，先写横着写 #1 \to #2，然后下面的映射是 #3，内射模是 #4，
