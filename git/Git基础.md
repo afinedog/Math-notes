@@ -158,6 +158,12 @@ git clone git://github.com/CosmosHua/locate.git new
 - `git config --golbal core.quotepath false` 将文件路径名设为中文而非数字
 - "global"是全局的意思
 
+### git连接到github
+
+- 即使通过梯子能连接到github，git也必须配置才行。因为浏览器走的是系统代理，梯子就是在系统代理上下功夫。而git一般不走系统代理，所以必须配置才行
+- 查看是否配置全局代理（https） `git config --global --get https.proxy`
+- 配置全局代理（https） `git config --global https.proxy https://127.0.0.1:你的代理端口号`，具体的代理端口号需要上梯子软件的通用设置里查
+
 ### 查看状态
 
 - ```pwd``` ```dir``` ```ls```查看当前文件夹（看看自己现在有哪些文件）
