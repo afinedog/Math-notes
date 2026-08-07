@@ -37,9 +37,8 @@
     "\\dkh" : "\\left(  #1  \\right)", "\\ddkh" : "\\Big( #1 \\Big)",
     "\\fkh" : "\\left[ #1 \\right]"  ,  "\\ffkh" : "\\Big[ #1 \\Big]",
     "\\hkh" : "\\left.\\begin{cases} #1 \\end{cases}\\right\\}",
-
-    // 群的乘法表
-    "\\tab" : "\\begin{array}{#1} #2 \\end{array}",
+    
+    
 
     // 普通向量
     "\\bs": "\\boldsymbol{#1}",
@@ -70,7 +69,7 @@
     "\\z" : "\\zeta" ,
     // 范数、内积简写
     "\\norm": "\\left\\| #1 \\right\\|","\\bnorm": "\\biggm\\| #1 \\biggm\\|","\\Bnorm": "\\Biggm \\| #1 \\Biggm \\|",
-     "\\ip" : "\\left\\lang #1 \\right\\rang", "\\Bip" : "\\Big\\lang #1  \\Big\\rang",
+     "\\ip" : "\\left\\lang #1 \\right\\rang", "\\Bip" : "\\Big\\lang #1  \\Big\\rang", "\\iip" : "\\left \\lang \\! \\left \\lang #1 \\right\\rang \\! \\right\\rang",
      "\\abs" : "\\left | #1 \\right |" ,
     // 泛函分析的空间简写
     "\\K" : "\\mathbb{K}",
@@ -95,7 +94,16 @@
     // 数分
     "\\grad" : "\\text{grad}\\ ", "\\diam" : "\\text{diam}\\ ", "\\ker" : "\\text{Ker}\\ ", "\\Ker":"\\text{Ker}\\ ", "\\Img":"\\text{Img}\\ ","\\Re" : "\\text{Re}\\ " , "\\Im" : "\\text{Im}\\ " ,"\\supp" : "\\text{spt}(#1)", "\\span" : "\\text{span}", "\\diag" : "\\text{diag}", "\\tr" : "\\text{tr}",
     // 抽代
-    "\\gcm":"\\text{gcm}" ,"\\char" : "\\text{char}\\ ", "\\Aut" : "\\text{Aut}\\ ", "\\aut":"\\text{Aut}", "\\End" : "\\text{End}\\ ", "\\coi" : "\\text{Coim}\\ ", "\\cok" : "\\text{Coker}\\ ", "\\rank" : "\\text{rank}\\ ", "\\Hom" : "\\text{Hom}", "\\Dom" : "\\text{Dom}\\ ", "\\dom" : "\\text{dom}\\ ", "\\Codom" : "\\text{Codom}\\ ", "\\In" : "\\text{In}\\ ", "\\Rad" : "\\text{Rad}\\ ", "\\adj" : "\\text{adj}", "\\Syl" : "\\text{Syl}", "\\Gal" : "\\text{Gal}",
+    "\\gcm":"\\text{gcm}" ,"\\char" : "\\text{char}\\ ", "\\Aut" : "\\text{Aut}\\ ", "\\aut":"\\text{Aut}", "\\End" : "\\text{End}\\ ", "\\Coim" : "\\text{Coim}\\ ", "\\Coker" : "\\text{Coker}\\ ", "\\rank" : "\\text{rank}\\ ",  "\\In" : "\\text{In}\\ ", "\\Out":"\\text{Out}\\ ", "\\Rad" : "\\text{Rad}\\ ", "\\adj" : "\\text{adj}", "\\Syl" : "\\text{Syl}", "\\Gal" : "\\text{Gal}", "\\ccdot" : "\\cdot\\cdot", "\\Nor" : "\\text{Nor}",
+    // 范畴论
+    "\\Ob" : "\\text{Ob}", "\\Hom" : "\\text{Hom}", "\\Dom" : "\\text{Dom}\\ ", "\\dom" : "\\text{dom}\\ ", "\\Codom" : "\\text{Codom}\\ ", "\\id":"\\text{id}",
+    "\\ED" : "\\text{ED}", "\\PID" : "\\text{PID}" , "\\IntDom" : "\\text{IntDom}" , "\\Ring" : "\\text{Ring}", "\\dto" : "\\hookrightarrow", "\\mto" : "\\twoheadrightarrow", "\\Grp" : "\\text{Grp}" , "\\Set" : "\\text{Set}" , "\\Mod" : "\\text{Mod}", "\\Abel" : "\\text{Abel}", "\\Id" : "\\text{Id}", "\\Ab" : "\\text{Ab}", "\\Arr" : "\\text{Arr}",  "\\Map" : "\\text{Map}", "\\Vect" : "\\text{Vect}" , "\\Top" : "\\text{Top}",
+    //群表示论
+    "\\Irr" : "\\text{Irr}", "\\btimes" : "\\boxtimes",
+    // 交换代数
+    "\\Ann" : "\\text{Ann}", "\\Spec" : "\\text{Spec}\\ ", "\\Max" : "\\text{Max}\\ ",
+    // 代数拓扑
+    "\\Int" : "\\text{Int\\ }", "\\Bd" : "\\text{Bd\\ }", "\\St" : "\\text{St}" , "\\Lk" : "\\text{Lk}", "\\Deck" : "\\text{Deck}",
     //复变
     "\\Arg": "\\text{Arg}\\ ", "\\Ln" : "\\text{Ln}\\ ", "\\Arcsin" : "\\text{Arcsin}\\ ", "\\Arccos" : "\\text{Arccos}\\ ", "\\Arctan" : "\\text{Arctan}\\ ", "\\sech" : "\\text{sech}\\ ", "\\Res" : "\\mathop{\\text{Res}}\\limits",
     //泛函
